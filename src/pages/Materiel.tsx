@@ -88,17 +88,17 @@ export default function Materiel() {
           )}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Inventaire</p>
                 <p className="mt-2 text-2xl font-display font-bold text-foreground">{equipment.length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">équipement(s) enregistrés.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Disponibles</p>
                 <p className="mt-2 text-2xl font-display font-bold text-success">{equipment.filter((e) => e.status === "disponible").length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">prêts à être affectés.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Sous-location</p>
                 <p className="mt-2 text-2xl font-display font-bold text-accent">{equipment.filter((e) => (e as any).is_subrented).length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">élément(s) issus du réseau partenaire.</p>

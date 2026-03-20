@@ -10,7 +10,7 @@ interface Priority {
 
 export function DailyPriorities({ priorities }: { priorities: Priority[] }) {
     return (
-        <Card className="shadow-card border-border/50 lg:col-span-2">
+        <Card className="border-border/70 shadow-card lg:col-span-2">
             <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                     <h3 className="font-display font-semibold">Priorités du jour</h3>
@@ -18,9 +18,9 @@ export function DailyPriorities({ priorities }: { priorities: Priority[] }) {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {priorities.map((item) => (
-                        <div key={item.title} className="rounded-xl border border-border p-4 bg-card">
-                            <p className="text-xs text-muted-foreground mb-1">{item.title}</p>
-                            <p className={cn("text-xl font-display font-bold", item.tone)}>{item.value}</p>
+                        <div key={item.title} className="rounded-[22px] border border-border/80 bg-card/90 p-4 shadow-sm">
+                            <p className="mb-1 text-xs text-muted-foreground">{item.title}</p>
+                            <p className={cn("text-xl font-display font-semibold", item.tone)}>{item.value}</p>
                             <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{item.detail}</p>
                         </div>
                     ))}

@@ -102,17 +102,17 @@ export default function Missions() {
           )}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Volume</p>
                 <p className="mt-2 text-2xl font-display font-bold text-foreground">{missions.length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">mission{missions.length > 1 ? "s" : ""} total.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Planifiées</p>
                 <p className="mt-2 text-2xl font-display font-bold text-info">{missions.filter((m) => m.status === "planifiée").length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">à préparer dans le planning.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">En cours</p>
                 <p className="mt-2 text-2xl font-display font-bold text-warning">{missions.filter((m) => m.status === "en_cours").length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">intervention(s) à monitorer.</p>

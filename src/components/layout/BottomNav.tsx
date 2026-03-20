@@ -20,8 +20,8 @@ export function BottomNav() {
   const bottomNavItems = allBottomNavItems.filter((item) => canAccess(role, item.section));
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-card border-t border-border safe-area-bottom">
-      <div className="flex items-center justify-around h-16 px-1">
+    <nav className="fixed bottom-0 left-0 right-0 z-40 px-3 pb-3 pt-2 safe-area-bottom md:hidden">
+      <div className="flex h-16 items-center justify-around rounded-[26px] border border-border/80 bg-card/95 px-1 shadow-card backdrop-blur-xl">
         {bottomNavItems.map((item) => {
           const isActive =
             location.pathname === item.path ||
@@ -31,16 +31,16 @@ export function BottomNav() {
               key={item.path}
               to={item.path}
               className={cn(
-                "flex flex-col items-center gap-1 px-2 py-1.5 rounded-lg transition-colors min-w-[56px]",
+                "relative flex min-w-[56px] flex-col items-center gap-1 rounded-[18px] px-2 py-1.5 transition-colors",
                 isActive
-                  ? "text-primary"
+                  ? "bg-primary/10 text-primary"
                   : "text-muted-foreground"
               )}
             >
               <item.icon className={cn("h-5 w-5", isActive && "drop-shadow-sm")} />
               <span className="text-[10px] font-medium leading-none">{item.title}</span>
               {isActive && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-b-full bg-primary" />
+                <div className="absolute left-1/2 top-0 h-0.5 w-8 -translate-x-1/2 rounded-b-full bg-primary" />
               )}
             </NavLink>
           );

@@ -176,17 +176,17 @@ export default function MissionForm() {
           )}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Client</p>
                 <p className="mt-2 text-lg font-display font-semibold text-foreground">{selectedClient?.name || "Non sélectionné"}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{selectedClient?.company || "Renseignez un client pour lier les devis."}</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Planning</p>
                 <p className="mt-2 text-lg font-display font-semibold text-foreground">{form.startDate ? "Daté" : "À planifier"}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{form.startDate ? new Date(form.startDate).toLocaleString("fr-FR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).replace(" à", " -") : "Aucune date de début définie."}</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Devis lié</p>
                 <p className="mt-2 text-lg font-display font-semibold text-foreground">{selectedDevis?.number || "Aucun"}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{selectedDevis ? `${selectedDevis.total_ht.toLocaleString("fr-FR")}€ HT` : "Associez un devis si la mission en dépend."}</p>

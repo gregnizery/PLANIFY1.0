@@ -250,18 +250,18 @@ export default function MissionDetail() {
           ) : undefined}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Statut</p>
                 <p className={cn("mt-2 inline-flex w-fit rounded-full px-3 py-1 text-sm font-semibold", statusConfig[mission.status]?.class)}>{statusConfig[mission.status]?.label}</p>
                 <p className="mt-2 text-sm text-muted-foreground">Mission suivie dans le cockpit opérations.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Chronologie</p>
                 <p className="mt-2 text-lg font-display font-semibold text-foreground">{mission.start_date ? new Date(mission.start_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" }) : "À planifier"}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{mission.end_date ? `Fin prévue le ${new Date(mission.end_date).toLocaleDateString("fr-FR", { day: "numeric", month: "long" })}` : "Date de fin non renseignée."}</p>
               </div>
               {canEditMission && (
-                <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+                <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Budget</p>
                   <p className="mt-2 text-2xl font-display font-bold text-primary">{(mission.amount || 0).toLocaleString("fr-FR")}€</p>
                   <p className="mt-1 text-sm text-muted-foreground">Montant renseigné sur la mission.</p>

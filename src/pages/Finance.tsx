@@ -176,17 +176,17 @@ export default function Finance() {
           )}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Recouvrement</p>
                 <p className="mt-2 text-2xl font-display font-bold text-destructive">{unpaidFacturesCount}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{unpaidAmount.toLocaleString("fr-FR")}€ restent à encaisser.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Cash encaissé</p>
                 <p className="mt-2 text-2xl font-display font-bold text-foreground">{collectedTotal.toLocaleString("fr-FR")}€</p>
                 <p className="mt-1 text-sm text-muted-foreground">{paiements.length} mouvement(s) validé(s).</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Validation manuelle</p>
                 <p className="mt-2 text-2xl font-display font-bold text-warning">{pendingCash}</p>
                 <p className="mt-1 text-sm text-muted-foreground">paiement(s) espèces en attente.</p>

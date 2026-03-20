@@ -64,17 +64,17 @@ export default function Clients() {
           )}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Base active</p>
                 <p className="mt-2 text-2xl font-display font-bold text-foreground">{clients.length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">client{clients.length > 1 ? "s" : ""} suivis dans la collection.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Entreprises</p>
                 <p className="mt-2 text-2xl font-display font-bold text-primary">{clients.filter((c) => !!c.company).length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">comptes B2B ou associations.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Mode d’affichage</p>
                 <p className="mt-2 text-lg font-display font-semibold text-foreground">{view === "grid" ? "Cartes enrichies" : "Table dense"}</p>
                 <p className="mt-1 text-sm text-muted-foreground">Basculer selon le niveau de détail souhaité.</p>

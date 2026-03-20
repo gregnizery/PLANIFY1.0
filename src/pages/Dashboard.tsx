@@ -64,7 +64,7 @@ export default function Dashboard() {
     if (role === "admin") {
       return {
         eyebrow: "Pilotage",
-        title: "Cockpit Premium",
+        title: "Centre de contrôle",
         description: "Vue d’ensemble des tensions commerciales, des relances finance et des prochaines missions pour piloter l’activité sans changer de contexte.",
         primaryAction: { label: "Nouvelle mission", onClick: () => navigate("/missions/nouveau") },
         secondaryAction: { label: "Nouveau devis", onClick: () => navigate("/finance/devis/nouveau") },
@@ -96,7 +96,7 @@ export default function Dashboard() {
     if (role === "manager") {
       return {
         eyebrow: "Opérations",
-        title: "Poste de Commande",
+        title: "Hub opérations",
         description: "Coordonnez planning, disponibilité matériel et chantiers commerciaux avec un cockpit dense, pensé pour l’orchestration quotidienne.",
         primaryAction: { label: "Nouvelle mission", onClick: () => navigate("/missions/nouveau") },
         secondaryAction: { label: "Nouveau client", onClick: () => navigate("/clients/nouveau") },
@@ -127,7 +127,7 @@ export default function Dashboard() {
     if (role === "technicien") {
       return {
         eyebrow: "Terrain",
-        title: "Console Logistique",
+        title: "Console terrain",
         description: "Accédez en un coup d’œil au prochain départ, au matériel mobilisé et aux actions terrain sans surcharger l’interface.",
         primaryAction: { label: "Scanner matériel", onClick: () => navigate("/materiel/scan") },
         secondaryAction: { label: "Voir les mouvements", onClick: () => navigate("/materiel/mouvements") },
@@ -157,7 +157,7 @@ export default function Dashboard() {
 
     return {
       eyebrow: "Prestataire",
-      title: "Espace Mission",
+      title: "Workspace prestataire",
       description: "Retrouvez vos assignations, les prochaines échéances et les accès utiles dans une interface recentrée sur l’exécution.",
       primaryAction: { label: "Voir mes missions", onClick: () => navigate("/missions") },
       secondaryAction: { label: "Mon profil", onClick: () => navigate("/parametres") },
@@ -187,7 +187,7 @@ export default function Dashboard() {
 
   const cockpitAside = (
     <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-      <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+      <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           Prochaine étape
         </p>
@@ -200,7 +200,7 @@ export default function Dashboard() {
             : "Le cockpit vous indiquera ici la prochaine action opérationnelle."}
         </p>
       </div>
-      <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+      <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           Tension finance
         </p>
@@ -211,7 +211,7 @@ export default function Dashboard() {
           facture(s) à surveiller, dont {overdueFactures.length} en retard.
         </p>
       </div>
-      <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+      <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           Flux parc
         </p>

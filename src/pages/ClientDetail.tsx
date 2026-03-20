@@ -64,19 +64,19 @@ export default function ClientDetail() {
           ) : undefined}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Missions</p>
                 <p className="mt-2 text-2xl font-display font-bold text-foreground">{missions.length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">activité(s) rattachée(s).</p>
               </div>
               {canEditClient && (
                 <>
-                  <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+                  <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Devis</p>
                     <p className="mt-2 text-2xl font-display font-bold text-primary">{devis.length}</p>
                     <p className="mt-1 text-sm text-muted-foreground">proposition(s) commerciale(s).</p>
                   </div>
-                  <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+                  <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Factures</p>
                     <p className="mt-2 text-2xl font-display font-bold text-info">{factures.length}</p>
                     <p className="mt-1 text-sm text-muted-foreground">document(s) émis.</p>

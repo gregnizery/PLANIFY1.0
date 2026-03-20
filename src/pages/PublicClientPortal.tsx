@@ -166,10 +166,10 @@ export default function PublicClientPortal() {
   };
 
   const brandStyle = useMemo(() => ({
-    background: `linear-gradient(135deg, ${data?.whiteLabel?.primary_color || "#0f766e"}, ${data?.whiteLabel?.secondary_color || "#b56a4d"})`,
+    background: `linear-gradient(135deg, ${data?.whiteLabel?.primary_color || "#5749f4"}, ${data?.whiteLabel?.secondary_color || "#8a7cff"})`,
   }), [data]);
 
-  const brandColor = data?.whiteLabel?.primary_color || "#0f766e";
+  const brandColor = data?.whiteLabel?.primary_color || "#5749f4";
 
   const refresh = async () => {
     if (!token) return;
@@ -234,7 +234,7 @@ export default function PublicClientPortal() {
       <div className="max-w-4xl mx-auto space-y-6">
 
         {/* Header */}
-        <header className="rounded-[28px] border border-white/10 p-6 text-white shadow-card" style={brandStyle}>
+        <header className="rounded-[32px] border border-white/15 p-6 text-white shadow-card" style={brandStyle}>
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-white/70 text-sm font-medium uppercase tracking-wider">Espace client</p>
@@ -246,17 +246,17 @@ export default function PublicClientPortal() {
         </header>
 
         <Tabs defaultValue="devis">
-          <TabsList className="bg-card/90 border border-border/80 rounded-2xl p-1 shadow-card w-full">
-            <TabsTrigger value="devis" className="flex-1 rounded-lg gap-1.5 data-[state=active]:shadow-sm">
+          <TabsList className="w-full rounded-[24px] border border-border/80 bg-card/90 p-1 shadow-card">
+            <TabsTrigger value="devis" className="flex-1 gap-1.5 rounded-[16px] data-[state=active]:shadow-sm">
               <FileText className="h-4 w-4" /> Devis <span className="text-xs">({data.devis.length})</span>
             </TabsTrigger>
-            <TabsTrigger value="factures" className="flex-1 rounded-lg gap-1.5 data-[state=active]:shadow-sm">
+            <TabsTrigger value="factures" className="flex-1 gap-1.5 rounded-[16px] data-[state=active]:shadow-sm">
               <Receipt className="h-4 w-4" /> Factures <span className="text-xs">({data.factures.length})</span>
             </TabsTrigger>
-            <TabsTrigger value="missions" className="flex-1 rounded-lg gap-1.5 data-[state=active]:shadow-sm">
+            <TabsTrigger value="missions" className="flex-1 gap-1.5 rounded-[16px] data-[state=active]:shadow-sm">
               <Calendar className="h-4 w-4" /> Missions <span className="text-xs">({data.missions.length})</span>
             </TabsTrigger>
-            <TabsTrigger value="historique" className="flex-1 rounded-lg gap-1.5 data-[state=active]:shadow-sm">
+            <TabsTrigger value="historique" className="flex-1 gap-1.5 rounded-[16px] data-[state=active]:shadow-sm">
               <Bell className="h-4 w-4" /> Historique
             </TabsTrigger>
           </TabsList>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function UpcomingMissionsList({ missions }: { missions: any[] }) {
     return (
-        <Card className="shadow-card border-border/50">
+        <Card className="border-border/70 shadow-card">
             <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                     <h3 className="font-display font-semibold">Prochaines missions</h3>
@@ -15,7 +15,7 @@ export function UpcomingMissionsList({ missions }: { missions: any[] }) {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {missions.slice(0, 3).map((m) => (
-                            <div key={m.id} className="rounded-xl border border-border p-4 hover:shadow-md transition-shadow bg-card">
+                            <div key={m.id} className="rounded-[22px] border border-border/80 bg-card/92 p-4 shadow-sm transition-all hover:-translate-y-px hover:shadow-card">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-info/10 text-info">{m.event_type || "Mission"}</span>
                                     {m.start_date && <span className="text-xs text-muted-foreground">{new Date(m.start_date).toLocaleString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).replace(" à", " -")}</span>}

@@ -25,6 +25,7 @@ _*.json
 lint_results*.json
 push_error.txt
 pencil_exports/
+pencil_exports_halo_preview/
 *.pdf
 shannon_security/
 

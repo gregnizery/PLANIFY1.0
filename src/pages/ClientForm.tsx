@@ -133,17 +133,17 @@ export default function ClientForm() {
           )}
           aside={(
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Type de compte</p>
                 <p className="mt-2 text-lg font-display font-semibold text-foreground">{hasType === "entreprise" ? "Entreprise" : "Particulier"}</p>
                 <p className="mt-1 text-sm text-muted-foreground">Le formulaire adapte les champs administratifs.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Validation</p>
                 <p className="mt-2 text-2xl font-display font-bold text-primary">{Object.values(errors).filter(Boolean).length}</p>
                 <p className="mt-1 text-sm text-muted-foreground">champ(s) nécessitant une correction.</p>
               </div>
-              <div className="rounded-[24px] border border-border/60 bg-background/80 p-4 shadow-inner">
+              <div className="rounded-[24px] border border-border/70 bg-card/90 p-4 shadow-sm backdrop-blur-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">État</p>
                 <p className="mt-2 text-lg font-display font-semibold text-foreground">{isEdit ? "Modification" : "Création"}</p>
                 <p className="mt-1 text-sm text-muted-foreground">Le client sera disponible dans la collection après enregistrement.</p>
