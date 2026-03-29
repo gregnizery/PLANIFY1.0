@@ -1,5 +1,24 @@
 {
   "projects": {
     "default": "planify-5a976"
-  }
+  },
+  "targets": {
+    "planify-5a976": {
+      "hosting": {
+        "app": [
+          "planify-5a976"
+        ],
+        "logistique": [
+          "planify-5a976-logistique"
+        ],
+        "facturation": [
+          "planify-5a976-facturation"
+        ],
+        "administration": [
+          "planify-5a976-administration"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

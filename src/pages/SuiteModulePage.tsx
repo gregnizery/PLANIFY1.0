@@ -35,6 +35,7 @@ import {
 import { useTeam } from "@/hooks/use-team";
 import { canAccess, useUserRole } from "@/hooks/use-user-role";
 import { formatCompactCurrency, formatCount, formatCurrency } from "@/lib/formatters";
+import { getModuleBaseUrl } from "@/lib/module-sites";
 
 type SuiteModuleKey = "logistique" | "facturation" | "administration";
 
@@ -46,21 +47,18 @@ type ActionTile = {
   section: string;
 };
 
-const moduleDescriptors: Record<SuiteModuleKey, { title: string; description: string; subdomain: string }> = {
+const moduleDescriptors: Record<SuiteModuleKey, { title: string; description: string }> = {
   logistique: {
     title: "Planify Logistique",
     description: "Le module d'exécution pour les missions, le parc, les transports et les arbitrages terrain.",
-    subdomain: "logistique.planify.<domaine>",
   },
   facturation: {
     title: "Planify Facturation",
     description: "Le module de production financière pour les devis, factures, encaissements et achats.",
-    subdomain: "facturation.planify.<domaine>",
   },
   administration: {
     title: "Planify Administration",
     description: "Le module de gouvernance pour les clients, prestataires, accès et réglages du workspace.",
-    subdomain: "administration.planify.<domaine>",
   },
 };
 
@@ -107,6 +105,7 @@ function ModuleFrame({
   children: ReactNode;
 }) {
   const descriptor = moduleDescriptors[moduleKey];
+  const moduleBaseUrl = getModuleBaseUrl(moduleKey);
 
   return (
     <AppLayout>
@@ -132,16 +131,16 @@ function ModuleFrame({
                 <p className="mt-2 text-sm font-medium text-foreground">/{moduleKey}</p>
               </div>
               <div className="rounded-xl border border-border/80 bg-background p-4">
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Futur sous-domaine</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Site Firebase dédié</p>
                 <div className="mt-2">
-                  <StatusPill label={descriptor.subdomain} tone="primary" className="max-w-full break-all normal-case tracking-normal" />
+                  <StatusPill label={moduleBaseUrl} tone="primary" className="max-w-full break-all normal-case tracking-normal" />
                 </div>
               </div>
               <div className="rounded-xl border border-border/80 bg-background p-4">
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Principe</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  Une seule base produit, un portail commun Planify, puis des entrées dédiées pour la logistique, la
-                  facturation et l'administration.
+                  Une seule base produit, plus trois sites Firebase dédiés qui ouvrent directement la logistique, la
+                  facturation ou l'administration.
                 </p>
               </div>
             </div>

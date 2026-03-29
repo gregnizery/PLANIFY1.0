@@ -8,6 +8,7 @@ import { AuthProvider } from "@/hooks/use-auth";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { WorkspaceProvider } from "@/hooks/use-workspace";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { getModuleForHostname, getModuleRoute } from "@/lib/module-sites";
 
 const Landing = lazy(() => import("./pages/Landing"));
 const Login = lazy(() => import("./pages/Login"));
@@ -69,6 +70,17 @@ function RouteFallback() {
   );
 }
 
+function RootEntry() {
+  const hostname = typeof window !== "undefined" ? window.location.hostname : "";
+  const moduleKey = getModuleForHostname(hostname);
+
+  if (moduleKey) {
+    return <Navigate to={getModuleRoute(moduleKey)} replace />;
+  }
+
+  return <Landing />;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
@@ -80,7 +92,7 @@ const App = () => (
             <WorkspaceProvider>
               <Suspense fallback={<RouteFallback />}>
                 <Routes>
-                  <Route path="/" element={<Landing />} />
+                  <Route path="/" element={<RootEntry />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/verify-email" element={<VerifyEmail />} />

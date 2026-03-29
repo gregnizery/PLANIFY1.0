@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Check, Menu, MoveRight, Radio } from "lucide-react";
 import { CookieBanner } from "@/components/public/CookieBanner";
 import { StatusPill } from "@/components/workbench/primitives";
+import { buildModuleAppUrl } from "@/lib/module-sites";
 import { buildRelativeAppPath } from "@/lib/public-app-url";
 
 type LandingWindow = Window & {
@@ -400,9 +401,9 @@ export default function Landing() {
   const [shuffleCards, setShuffleCards] = useState(shuffleCardsBase);
   const loginPath = buildRelativeAppPath("/login");
   const registerPath = buildRelativeAppPath("/register");
-  const logistiquePath = buildRelativeAppPath("/logistique");
-  const facturationPath = buildRelativeAppPath("/facturation");
-  const administrationPath = buildRelativeAppPath("/administration");
+  const logistiqueUrl = buildModuleAppUrl("logistique");
+  const facturationUrl = buildModuleAppUrl("facturation");
+  const administrationUrl = buildModuleAppUrl("administration");
 
   const manifestoText = useMemo(
     () => ({
@@ -721,9 +722,9 @@ export default function Landing() {
                 financière à traiter.
               </p>
               <div className="mt-5 flex items-center justify-between gap-3">
-                <StatusPill label="futur : facturation.planify.<domaine>" tone="warning" className="border-white/10 bg-white/6 text-white/70" />
-                <MagneticButton variant="dark" onClick={() => navigate(facturationPath)}>
-                  Ouvrir
+                <StatusPill label="planify-5a976-facturation.web.app" tone="warning" className="border-white/10 bg-white/6 text-white/70" />
+                <MagneticButton variant="dark" onClick={() => window.location.assign(facturationUrl)}>
+                  Ouvrir le module
                 </MagneticButton>
               </div>
               <div className="mt-8">
@@ -739,9 +740,9 @@ export default function Landing() {
                 préparation.
               </p>
               <div className="mt-5 flex items-center justify-between gap-3">
-                <StatusPill label="futur : logistique.planify.<domaine>" tone="warning" className="border-white/10 bg-white/6 text-white/70" />
-                <MagneticButton variant="dark" onClick={() => navigate(logistiquePath)}>
-                  Ouvrir
+                <StatusPill label="planify-5a976-logistique.web.app" tone="warning" className="border-white/10 bg-white/6 text-white/70" />
+                <MagneticButton variant="dark" onClick={() => window.location.assign(logistiqueUrl)}>
+                  Ouvrir le module
                 </MagneticButton>
               </div>
               <div className="mt-8">
@@ -756,9 +757,9 @@ export default function Landing() {
                 Les comptes, prestataires et réglages restent regroupés dans le même poste de commande pour l&apos;équipe.
               </p>
               <div className="mt-5 flex items-center justify-between gap-3">
-                <StatusPill label="futur : administration.planify.<domaine>" tone="warning" className="border-white/10 bg-white/6 text-white/70" />
-                <MagneticButton variant="dark" onClick={() => navigate(administrationPath)}>
-                  Ouvrir
+                <StatusPill label="planify-5a976-administration.web.app" tone="warning" className="border-white/10 bg-white/6 text-white/70" />
+                <MagneticButton variant="dark" onClick={() => window.location.assign(administrationUrl)}>
+                  Ouvrir le module
                 </MagneticButton>
               </div>
               <div className="mt-8">
